@@ -61,3 +61,27 @@ Authenticates a user and returns an access token.
     -F "email=ali@gmail.com" \
     -F "password=Pakistan@123"
     ```
+
+## Create User
+
+Creates a new user account.
+
+-   Method: POST
+-   URL: {{base_url}}/users
+-   Authentication: Bearer Token
+-   Request Body (form-data):
+    -   email (string, required): User's email (e.g., hassan@gmail.com)
+    -   password (string, required): User's password (e.g., Pakistan@123)
+    -   password_confirmation (string, required): Password confirmation (e.g., Pakistan@123)
+    -   name (string, required): User's name (e.g., ali hassan)
+-   Example:
+    ```bash
+    curl -X POST {{base_url}}/users \
+    -H "Authorization: Bearer {{astudio_token}}" \
+    -F "email=hassan@gmail.com" \
+    -F "password=Pakistan@123" \
+    -F "password_confirmation=Pakistan@123" \
+    -F "name=ali hassan"
+
+
+    ```
